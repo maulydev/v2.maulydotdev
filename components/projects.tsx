@@ -1,53 +1,54 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github } from "lucide-react"
-import Image from "next/image"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Movr",
     description:
-      "A movie sharing platform for movie lovers, where users can share their favourite movies for other users to watch.",
+      "A fullstack movie sharing platform for movie lovers, where users can share their favourite movies for other users to watch.",
     image: "/placeholder.svg?height=600&width=800",
     year: "2024",
     link: "https://movr.vercel.app",
-    github: "https://github.com/ernestkumashie/movr",
-    tags: ["Next.js", "React", "Tailwind CSS", "API Integration"],
+    github: "https://github.com/maulydev/movr",
+    tags: ["Next JS", "Tailwind CSS"],
   },
   {
     title: "GhostTalk",
     description:
-      "This web app allows a user to share his/her profile link and receive honest feedback from friends and family without revealing their identity.",
+      "A fullstack web app allows a user to share his/her profile link and receive honest feedback from friends and family without revealing their identity.",
     image: "/placeholder.svg?height=600&width=800",
     year: "2023",
     link: "https://ghosttalk.netlify.app",
-    github: "https://github.com/ernestkumashie/ghosttalk",
-    tags: ["React", "Firebase", "Tailwind CSS"],
+    github: "https://github.com/maulydev/ghosttalk",
+    tags: ["React JS", "Django Rest Framework", "Tailwind CSS"],
   },
   {
     title: "Gospel Corner",
-    description: "A blog website for sharing the gospel and inspirational messages.",
+    description:
+      "A blog website for sharing the gospel and inspirational messages.",
     image: "/placeholder.svg?height=600&width=800",
     year: "2023",
     link: "https://gospelcorner.vercel.app",
-    github: "https://github.com/ernestkumashie/gospel-corner",
-    tags: ["Next.js", "CMS", "Tailwind CSS"],
+    github: "https://github.com/maulydev/gospel-corner",
+    tags: ["React JS", "Django Rest Framework", "Tailwind CSS"],
   },
   {
     title: "Open Shortener",
     description:
-      "Open is a free and open-source tool for shortening URLs. It provides a simple and efficient way to shorten long URLs, making them easier to share and manage.",
+      "A fullstack open URL Shortener. It provides a simple and efficient way to shorten long URLs, making them easier to share and manage.",
     image: "/placeholder.svg?height=600&width=800",
     year: "2023",
-    link: "https://open-shortener.vercel.app",
-    github: "https://github.com/ernestkumashie/open-shortener",
-    tags: ["Next.js", "MongoDB", "API"],
+    link: "https://opsh.vercel.app",
+    github: "https://github.com/maulydev/open-shortener",
+    tags: ["Next JS", "Tailwind CSS"],
   },
   {
     title: "SimpliDB",
@@ -55,26 +56,26 @@ const projects = [
     image: "/placeholder.svg?height=600&width=800",
     year: "2022",
     link: "https://pypi.org/project/simplidb/",
-    github: "https://github.com/ernestkumashie/simplidb",
-    tags: ["Python", "SQLite", "Package"],
+    github: "https://github.com/maulydev/simplidb",
+    tags: ["Python", "SQLite3"],
   },
   {
     title: "GitBoard",
-    description: "GitHub profile in colors - visualize your GitHub activity.",
+    description: "GitHub profile in colors.",
     image: "/placeholder.svg?height=600&width=800",
     year: "2022",
-    link: "https://gitboard.vercel.app",
-    github: "https://github.com/ernestkumashie/gitboard",
-    tags: ["React", "GitHub API", "Data Visualization"],
+    link: "https://gitboard-one.vercel.app",
+    github: "https://github.com/maulydev/gitboard",
+    tags: ["Next JS", "GitHub API", "Tailwind CSS"],
   },
-]
+];
 
 export default function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
-  })
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,7 +85,7 @@ export default function Projects() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -95,7 +96,7 @@ export default function Projects() {
         duration: 0.5,
       },
     },
-  }
+  };
 
   return (
     <section id="projects" className="py-20" ref={ref}>
@@ -106,9 +107,12 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+            Projects
+          </h2>
           <p className="text-muted-foreground max-w-[800px] mx-auto text-lg">
-            Here are some of the projects I&apos;ve worked on. Each project represents a unique challenge and solution.
+            Here are some of the projects I&apos;ve worked on. Each project
+            represents a unique challenge and solution.
           </p>
         </motion.div>
 
@@ -136,14 +140,21 @@ export default function Projects() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <Badge variant="outline" className="bg-black/50 backdrop-blur-sm">
+                    <Badge
+                      variant="outline"
+                      className="bg-black/50 backdrop-blur-sm"
+                    >
                       {project.year}
                     </Badge>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, idx) => (
                       <Badge
@@ -158,7 +169,11 @@ export default function Projects() {
                 </CardContent>
                 <CardFooter className="px-6 pb-6 pt-0 flex justify-between">
                   <Button variant="outline" size="sm" className="gap-1" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Github className="h-4 w-4" />
                       Code
                     </a>
@@ -169,7 +184,11 @@ export default function Projects() {
                     className="gap-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
                     asChild
                   >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="h-4 w-4" />
                       Live Demo
                     </a>
@@ -188,5 +207,5 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

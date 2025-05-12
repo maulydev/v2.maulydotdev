@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react"
 
 export default function Contact() {
   const { toast } = useToast()
@@ -125,14 +125,14 @@ export default function Contact() {
             <motion.div variants={itemVariants}>
               <Card className="border-none bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">
                 <CardContent className="p-6 flex items-start gap-4">
-                  <div className="bg-rose-500/10 p-3 rounded-full">
-                    <Phone className="h-6 w-6 text-rose-500" />
+                  <div className="bg-emerald-500/10 p-3 rounded-full">
+                    <MessageCircle className="h-6 w-6 text-emerald-500" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-lg mb-1">Phone</h3>
+                    <h3 className="font-medium text-lg mb-1">WhatsApp</h3>
                     <p className="text-muted-foreground">
-                      <a href="tel:+233256847741" className="hover:text-rose-500 transition-colors">
-                        (233) 25-684-7741
+                      <a href="tel:+233503410451" className="hover:text-rose-500 transition-colors">
+                        (233) 50-341-0451
                       </a>
                     </p>
                   </div>

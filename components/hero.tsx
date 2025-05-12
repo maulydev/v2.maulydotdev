@@ -107,9 +107,9 @@ export default function Hero() {
                   2000,
                   "Frontend Wizard",
                   2000,
-                  "React/Next.js Expert",
-                  2000,
                   "UI/UX Enthusiast",
+                  2000,
+                  "API Guru",
                   2000,
                 ]}
                 wrapper="h2"
@@ -126,7 +126,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-[700px] text-muted-foreground text-lg"
           >
-            A Frontend web developer, dedicated to crafting end-to-end digital solutions with frontend wizardry.
+            A Fullstack web developer, dedicated to crafting end-to-end digital solutions with fullstack wizardry.
           </motion.p>
 
           <motion.div
@@ -161,7 +161,7 @@ export default function Hero() {
               className="rounded-full hover:bg-purple-500/10 hover:text-purple-500 transition-colors"
               asChild
             >
-              <a href="https://github.com/ernestkumashie" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/maulydev" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
@@ -172,7 +172,7 @@ export default function Hero() {
               className="rounded-full hover:bg-purple-500/10 hover:text-purple-500 transition-colors"
               asChild
             >
-              <a href="https://linkedin.com/in/ernestkumashie" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/maulydotdev" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
