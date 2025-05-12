@@ -16,7 +16,7 @@ export default function Footer() {
             className="flex flex-col items-center md:items-start gap-2"
           >
             <h2 className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500">
-              Mauly odtDev
+              Mauly dotDev
             </h2>
             <p className="text-sm text-muted-foreground">
               Full Stack Developer based in Ho, Ghana
