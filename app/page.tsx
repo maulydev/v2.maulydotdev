@@ -4,12 +4,6 @@ import About from "@/components/about"
 import Projects from "@/components/projects"
 import Experience from "@/components/experience"
 import Contact from "@/components/contact"
-import Footer from "@/components/footer"
-
-export const metadata: Metadata = {
-  title: "Ernest Kumashie | Full Stack Developer",
-  description: "Portfolio of Ernest Kumashie, a Full Stack Developer specializing in React, Next.js, and Django",
-}
 
 export default function Home() {
   return (
@@ -19,7 +13,6 @@ export default function Home() {
       <Projects />
       <Experience />
       <Contact />
-      <Footer />
     </main>
   )
 }
