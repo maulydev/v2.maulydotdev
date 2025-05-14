@@ -6,7 +6,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -119,7 +118,7 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
           <div>
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
@@ -166,9 +165,6 @@ export default function Experience() {
                             {experience.description}
                           </p>
                         </CardContent>
-                        <CardFooter className="p-6 pt-0">
-                          <small className="uppercase text-[0.7rem]  text-pink-400">{experience.type}</small>
-                        </CardFooter>
                       </Card>
                     </div>
                   </div>

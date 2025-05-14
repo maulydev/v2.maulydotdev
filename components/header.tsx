@@ -72,7 +72,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -81,12 +81,10 @@ import { Menu } from "lucide-react";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 const navLinks = [
-  { href: "/#", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#projects", label: "Projects" },
   { href: "/showroom", label: "Showroom" },
   { href: "/#experience", label: "Experience" },
-  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -103,7 +101,7 @@ export default function Navbar() {
     >
       <div className="container px-4 md:px-6 flex items-center justify-between">
         <Link
-          href="#"
+          href="/#"
           className="text-xl md:text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500"
         >
           Mauly dotDev

@@ -70,7 +70,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20" ref={ref}>
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 gap-8 items-start">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -98,13 +98,13 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg mb-1">Location</h3>
-                    <p className="text-muted-foreground">Poly St. Ho, Ghana, VH0044</p>
+                    <p className="text-muted-foreground">Ghana</p>
                   </div>
                 </CardContent>
               </Card>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
+            {/* <motion.div variants={itemVariants}>
               <Card className="border-none bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">
                 <CardContent className="p-6 flex items-start gap-4">
                   <div className="bg-pink-500/10 p-3 rounded-full">
@@ -120,7 +120,7 @@ export default function Contact() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div variants={itemVariants}>
               <Card className="border-none bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300">

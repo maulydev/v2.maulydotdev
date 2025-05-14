@@ -19,7 +19,7 @@ export default function Footer() {
               Mauly dotDev
             </h2>
             <p className="text-sm text-muted-foreground">
-              Full Stack Developer based in Ho, Ghana
+              Full Stack Developer based in Ghana.
             </p>
           </motion.div>
 
