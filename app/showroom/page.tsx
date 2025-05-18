@@ -14,7 +14,6 @@ import { projects } from "@/cms";
 
 
 export default function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -51,7 +50,7 @@ export default function Projects() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
-            Projects
+            Project Showroom
           </h2>
           <p className="text-muted-foreground max-w-[800px] mx-auto text-lg">
             Here are some of the projects I&apos;ve worked on. Each project
@@ -69,11 +68,9 @@ export default function Projects() {
             <motion.div
               key={index}
               variants={itemVariants}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
               className="relative group"
             >
-              <Card className="h-full overflow-hidden border-none bg-white/10 backdrop-blur-sm hover:bg-background/90 transition-all duration-300">
+              <Card className="h-full overflow-hidden border-none bg-white/5 backdrop-blur-sm hover:bg-gradient-to-br hover:from-purple-500/5 hover:to-pink-900/5 transition-all duration-300">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
@@ -138,13 +135,6 @@ export default function Projects() {
                   </Button>
                 </CardFooter>
               </Card>
-              {hoveredIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 blur-sm -z-10"
-                />
-              )}
             </motion.div>
           ))}
         </motion.div>
