@@ -51,7 +51,7 @@ export const projects = [
   },
   {
     title: "My Portfolio",
-    description: "A portfolio website.",
+    description: "A personal portfolio website for showcasing my work and skills.",
     image: "/projects/portfolio.png",
     year: "2023",
     link: "https://v2-mauly.vercel.app",
@@ -60,7 +60,7 @@ export const projects = [
   },
   {
     title: "SimpliDB",
-    description: "A python package to simplify sqlite3 database operations.",
+    description: "A python package to simplify sqlite3 database operations with python.",
     image: "/projects/simplidb.png",
     year: "2022",
     link: "https://pypi.org/project/simplidb/",
@@ -69,7 +69,7 @@ export const projects = [
   },
   {
     title: "GitBoard",
-    description: "GitHub profile in colors using github API.",
+    description: "A vibrant and colorful GitHub dashboard that visualizes your repositories, and activity with an engaging color palette.",
     image: "/projects/gitboard.png",
     year: "2022",
     link: "https://gitboard-one.vercel.app",

@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { MapPin, MessageCircle, Send } from "lucide-react";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -18,7 +18,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    content: "",
   });
 
   const [ref, inView] = useInView({
@@ -38,11 +38,19 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      const response = await fetch("/api/contact", { method: "POST" });
-
+      // Make sure formData has values before sending
+      console.log("Sending data:", formData); // Add this to debug
+      
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
       if (response.status === 200) {
-        console.log("res_data: ", response.formData);
+        console.log("res_data: ", response);
       }
 
       toast({
@@ -50,7 +58,7 @@ export default function Contact() {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
 
-      // setFormData({ name: "", email: "", message: "" });
+      // setFormData({ name: "", email: "", content: "" });
     } catch (error) {
       console.log("ERR_CONTACT_FORM: ", error);
     } finally {
@@ -203,15 +211,15 @@ export default function Contact() {
                   </div>
                   <div className="space-y-2">
                     <label
-                      htmlFor="message"
+                      htmlFor="content"
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       Message
                     </label>
                     <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                      id="content"
+                      name="content"
+                      value={formData.content}
                       onChange={handleChange}
                       placeholder="Your message"
                       required
