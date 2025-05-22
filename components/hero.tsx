@@ -142,10 +142,10 @@ export default function Hero() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="/resume.pdf" download>
+              <Link target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1-n__fZIE9Z3cs0SNq3Lpr5nzky_H22106K_1tTujTZo/edit?usp=sharing`" download>
                 Download CV
                 <Download className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </Button>
           </motion.div>
 
