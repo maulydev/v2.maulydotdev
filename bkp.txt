@@ -1,0 +1,306 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const experiences = [
+  {
+    title: "React Native Developer",
+    company: "Trebnet Digitals",
+    location: "Ho, Ghana",
+    period: "FEB 2025",
+    description:
+      "As a React Native Developer at Trebnet Digitals, I have contributed to the development of cutting-edge mobile applications for our clients.",
+    type: "contract",
+  },
+  {
+    title: "React/Next JS Frontend Developer",
+    company: "Atmos Technologies",
+    location: "Ho, Ghana",
+    period: "OCT 2023 - 2025",
+    description:
+      "As a Frontend Developer at Atmos Technologies, I have actively shaped our web applications' user interface and overall user experience.",
+    type: "work",
+  },
+  {
+    title: "Teaching Assistant",
+    company: "Ho Technical University",
+    location: "Ho, Ghana",
+    period: "NOV 2022 - SEPT 2023",
+    description:
+      "Provided tailored tutoring and guidance to students, fostering their proficiency in Python programming. Guided individuals in developing a strong foundation in computer literacy, encompassing areas such as software utilization and digital competence.",
+    type: "NSS",
+  },
+  {
+    title: "API Developer",
+    company: "Trebnet Digitals",
+    location: "Ho, Ghana",
+    period: "OCT 2022",
+    description:
+      "As an API Developer at Trebnet Digitals, I have contributed to the development of robust and scalable APIs, ensuring seamless integration and functionality for our applications.",
+    type: "contract",
+  },
+];
+
+export default function Experience() {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  return (
+    <section
+      id="experience"
+      className="py-20 bg-black/5 backdrop-blur-sm"
+      ref={ref}
+    >
+      <div className="container px-4 md:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+            Experience & Education
+          </h2>
+          <p className="text-muted-foreground max-w-[800px] mx-auto text-lg">
+            My professional journey and educational background.
+          </p>
+        </motion.div>
+
+        <div className="">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="grid grid-cols-2 gap-6 max-w-6xl mx-auto relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px lg:before:mx-auto lg:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500 before:to-transparent"
+          >
+            {experiences.map((experience, index) => (
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="h-full border-none bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300 shadow-2xl">
+                  <CardHeader className="p-6 pb-3">
+                    <div className="flex justify-between items-center flex-wrap gap-2">
+                      <CardTitle className="text-lg">
+                        {experience.title}
+                      </CardTitle>
+                      <Badge
+                        variant="outline"
+                        className="bg-purple-500/10 text-purple-500"
+                      >
+                        {experience.period}
+                      </Badge>
+                    </div>
+                    <CardDescription>
+                      {experience.company} • {experience.location}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-6 pt-0">
+                    <p className="text-muted-foreground">
+                      {experience.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const experiences = [
+  {
+    title: "React Native Developer",
+    company: "Trebnet Digitals",
+    location: "Ho, Ghana",
+    period: "FEB 2025",
+    description:
+      "As a React Native Developer at Trebnet Digitals, I have contributed to the development of cutting-edge mobile applications for our clients.",
+    type: "contract",
+  },
+  {
+    title: "React/Next JS Frontend Developer",
+    company: "Atmos Technologies",
+    location: "Ho, Ghana",
+    period: "OCT 2023 - 2025",
+    description:
+      "As a Frontend Developer at Atmos Technologies, I have actively shaped our web applications' user interface and overall user experience.",
+    type: "work",
+  },
+  {
+    title: "Teaching Assistant",
+    company: "Ho Technical University",
+    location: "Ho, Ghana",
+    period: "NOV 2022 - SEPT 2023",
+    description:
+      "Provided tailored tutoring and guidance to students, fostering their proficiency in Python programming. Guided individuals in developing a strong foundation in computer literacy, encompassing areas such as software utilization and digital competence.",
+    type: "NSS",
+  },
+  {
+    title: "API Developer",
+    company: "Trebnet Digitals",
+    location: "Ho, Ghana",
+    period: "OCT 2022",
+    description:
+      "As an API Developer at Trebnet Digitals, I have contributed to the development of robust and scalable APIs, ensuring seamless integration and functionality for our applications.",
+    type: "contract",
+  },
+];
+
+export default function Experience() {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  return (
+    <section
+      id="experience"
+      className="py-20 bg-black/5 backdrop-blur-sm"
+      ref={ref}
+    >
+      <div className="container px-4 md:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">
+            Experience & Education
+          </h2>
+          <p className="text-muted-foreground max-w-[800px] mx-auto text-lg">
+            My professional journey and educational background.
+          </p>
+        </motion.div>
+
+        <div className="">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px lg:before:mx-auto lg:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500 before:to-transparent"
+          >
+            {experiences.map((experience, index) => (
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="h-full border-none bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors duration-300 shadow-2xl">
+                  <CardHeader className="p-6 pb-3">
+                    <div className="flex justify-between items-center flex-wrap gap-2">
+                      <CardTitle className="text-lg">
+                        {experience.title}
+                      </CardTitle>
+                      <Badge
+                        variant="outline"
+                        className="bg-purple-500/10 text-purple-500"
+                      >
+                        {experience.period}
+                      </Badge>
+                    </div>
+                    <CardDescription>
+                      {experience.company} • {experience.location}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-6 pt-0">
+                    <p className="text-muted-foreground">
+                      {experience.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
