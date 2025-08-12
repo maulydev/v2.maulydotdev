@@ -13,6 +13,15 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
+    title: "Next JS Developer",
+    company: "Future Interns",
+    location: "Remote",
+    period: "JUL 2025 - AUG 2025",
+    description:
+      "As a Fullstack Next JS Developer Intern at Future Interns, I had the opportunity to building a secure jwt authentication system without any 3rd-party auth library, Built and employee management system, and also built a chat system supporting group and private chats similar to WhatsApp.",
+    type: "Internship",
+  },
+  {
     title: "React Native Developer",
     company: "Trebnet Digitals",
     location: "Ho, Ghana",
